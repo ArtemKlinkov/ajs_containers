@@ -11,6 +11,9 @@ export default class Team {
   }
 
   addAll(...characters) {
+    if (Array.isArray(characters) && characters.length === 0) {
+      throw new Error('В качестве аргумента функции должен быть передан массив!');
+    }
     characters.forEach((character) => this.members.add(character));
   }
 

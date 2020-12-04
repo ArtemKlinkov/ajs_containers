@@ -8,6 +8,11 @@ test('should throw error "Выбранный персонаж уже есть в
   expect(() => { newTeam.add(bowmanVasiliy); }).toThrow('Выбранный персонаж уже есть в команде!');
 });
 
+test('should throw error "В качестве аргумента функции должен быть передан массив!" for non-array parameter', () => {
+  const newTeam = new Team();
+  expect(() => { newTeam.addAll(); }).toThrow('В качестве аргумента функции должен быть передан массив!');
+});
+
 test('should add array of chatacters to team', () => {
   const bowman1 = new Bowman('Василий');
   const bowman2 = new Bowman('Иван');
